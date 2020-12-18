@@ -28,6 +28,20 @@ class Member{
 	public void print() {
 		System.out.println(this+"-->"+no+","+name);
 	}
+	public void method(int a) {
+		int tot;
+		/*
+		 The local variable tot may not have been initialized
+		 tot=tot+7;
+		 */
+		
+		/*
+		 * 매개변수 a는 호출시 선언과 초기화가 이루어진다.
+		 */
+		int b = a + 4;
+		
+		
+	}
 }
 
 public class LocalVariableInitializationMain {
@@ -84,31 +98,47 @@ public class LocalVariableInitializationMain {
 		
 		Member m3=new Member(3,"삼번");
 		Member m4=new Member(4,"사번");
-		System.out.println("-----교환전-----");
+		System.out.println("-----주소값교환전-----");
 		m3.print();
 		m4.print();
 		Member tm = m3;
 		m3=m4;
 		m4=tm;
-		System.out.println("-----교환후-----");
+		System.out.println("-----주소값교환후-----");
 		m3.print();
 		m4.print();
-		
+		System.out.println("--------------null-----------------");
 		/*
 		 * null : 객체주소리터럴(값)
 		 *        - 주소없다라는 의미의 값
 		 *        - 객체주소값 초기화의 용도로 사용 
 		 */
+		Member m5;
+		m5 = null;
 		
+		//null주소사용시 NullPointerException발생
+		if(m5==null) {
+			m5=new Member(5, "오오오");
+			m5.print();
+		}else {
+			m5.print();
+		}
+		/*
+		 * 객체주소값 비교
+		 */
+		Member m6=new Member(6, "육육육");
+		Member m7=m6;
+		if(m6==m7) {
+			System.out.println("m6과 m7은 주소값이동일하다.<<"+m6+" == "+m5+">>");
+		}else {
+			System.out.println("m6과 m7은 주소값이동일하지않다.");
+		}
+		if(m6!=m1) {
+			System.out.println("m6과 m1은 주소값이동일하지않다.<<"+m6+" != "+m1+">>");
+		}
+		System.out.println("-------매개변수호출--------");
+		m6.method(12);
 
 	}
 
 }
-
-
-
-
-
-
-
-
