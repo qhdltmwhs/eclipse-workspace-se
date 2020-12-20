@@ -14,15 +14,19 @@ public class BookMember {
 	  회원정보출력 
 	 */
 	
-	private int no;
-	private String name;
-	private String hp;
-	private Book brBook;
+	private int no;		//회원번호
+	private String name;//회원이름
+	private String hp;	//전화번호
+	private Book brBook;//빌린책(Borrowed book)
 	
-	public void print( ) {
-		System.out.print(this.no this.name this.hp + " ");
+	
+	public void print() {
+		System.out.println("=====================================");
+		System.out.printf("%s %s %s%n", "회원번호", "   회원이름   ", "     전화번호     ");
+		System.out.printf("%8d %10s %17s%n",this.no, this.name, this.hp);
 		this.brBook.print();
 	}
+	
 
 	public int getNo() {
 		return no;

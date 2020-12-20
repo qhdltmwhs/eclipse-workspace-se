@@ -18,23 +18,21 @@ public class Book {
 	 */
 	private int bookNo;
 	private String bookTitle;
-	private char bookType;
+	private String bookType;
 	private String bookDescription;
 	public Book() {
 		
 	}
-	public Book(int bookNo, String bookTitle, char bookType, String bookDescription) {
+	public Book(int bookNo, String bookTitle, String bookType, String bookDescription) {
 		this.bookNo = bookNo;
 		this.bookTitle = bookTitle;
 		this.bookType = bookType;
 		this.bookDescription = bookDescription;
 	}
 	public void print() {
-		System.out.println(this.bookNo, this.bookTitle this.bookType this.bookDescription);
-	}
-	
-	
-	
-	
-	
+		System.out.println("=====================================");
+		System.out.printf("%s %s %s %s%n", "  책넘버 ", "  책제목 ", "  책분류  ", "책설명");
+		System.out.printf("%8d %5s %8s %7s%n",this.bookNo, this.bookTitle, this.bookType, bookDescription);
+	}	
+		
 }
