@@ -56,7 +56,11 @@ public class StudentArrayMain {
 		/*
 		 * 5. 학점A인 학생들 출력
 		 */
-
+		for (int i = 0; i < students.length; i++) {
+			if(students[i].getGrade() == 'A') {
+				students[i].print();
+			}
+		}
 		System.out.println("5. 학점A인 학생들 출력");
 
 		/*
