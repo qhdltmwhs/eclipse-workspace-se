@@ -34,10 +34,10 @@ public class PrimitiveTypeArrayStudentMain {
 		/*
 		 * [Quiz]석차계산
 		 */
-		for (int j = 0;j < noArray.length; j++) {
-			for(int i = 0; i < noArray.length; i++) {
-				if(tota[j] < tota[i]) {
-					ranka[j]++;
+		for (int i = 0;i < noArray.length; i++) {
+			for(int j = 0; j < noArray.length; j++) {
+				if(tota[i] < tota[j]) {
+					ranka[i]++;
 				}
 			}
 		}
@@ -83,7 +83,7 @@ public class PrimitiveTypeArrayStudentMain {
 		 */
 		//1회
 		for (int j = 0; j < noArray.length - 1; j++) {
-			for (int i = 0; i < noArray.length - 1; i++) {
+			for (int i = 0; i < noArray.length - 1 - j; i++) {
 				if(tota[i] > tota[i + 1]) {
 					//총점교환
 					int tempTot = tota[i];
