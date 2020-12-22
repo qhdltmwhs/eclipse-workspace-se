@@ -12,9 +12,19 @@ public class Account {
 	/*
 	 * 생성자
 	 */
+	/**
+	 * 기본생성자
+	 */
 	public Account() {
 		
 	}
+	/**
+	 * 인자4개로 초기화된 객체생성
+	 * @param no		계좌번호
+	 * @param owner		계좌주 
+	 * @param balance	잔고
+	 * @param iyul		이율
+	 */
 	public Account(int no, String owner, int balance, double iyul) {
 		this.no = no;
 		this.owner = owner;
@@ -59,6 +69,10 @@ public class Account {
 	public String getOwner() {
 		return this.owner;
 	}
+	/**
+	 * 잔고조회 메소드
+	 * @return 잔고
+	 */
 	public int getBalance() {
 		return this.balance;
 	}
