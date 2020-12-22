@@ -12,8 +12,8 @@ public class LottoMain {
 			for (int j = 0; j < i; j++) {
 				if(lottoNumber[i] == lottoNumber[j]) {
 					System.out.println("중복허용안됨");
-					System.out.println("[i] " + i + " index값 " + lottoNumber[i]);  
-					System.out.println("[j] " + j + " index값 " + lottoNumber[j]);
+					System.out.println("[i] " + i + "_index값 " + lottoNumber[i]);  
+					System.out.println("[j] " + j + "_index값 " + lottoNumber[j]);
 					i--;
 					break;
 				}
