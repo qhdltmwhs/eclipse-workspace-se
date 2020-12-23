@@ -33,20 +33,23 @@ public class BookMember {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	
-
-
-	
-
-
-
-	
-	
-	public void print() {
-		System.out.println(no+"\t"+name+"\t"+phoneNumber+"\t");
+	public Book[] getBooks() {
+		return books;
 	}
-	
-	
-	
+	public void setBooks(Book[] books) {
+		this.books = books;
+	}
+	public static void headerPrint() {
+		System.out.println("===============도서대여==============");
+		System.out.printf("%s %s %s%n", "회원번호", "   회원이름   ", "     전화번호     ");
+		System.out.println("-------------------------------------");
+	}
+	public void print() {
+		System.out.printf("%8d %10s %17s%n",this.no, this.name, this.phoneNumber);
+		Book.headerPrint();
+		for (int i = 0; i < books.length; i++) {
+			this.books[i].print();
+		}
+	}
 	
 }
