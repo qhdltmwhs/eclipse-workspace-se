@@ -22,10 +22,16 @@ public class DvdShopMain {
 		 * 
 		 * Dvd객체배열 참조변수를 회원의 멤버변수에대입
 		 */
+		m1.setNo(1);
+		m1.setName("JUNG");
+		m1.setTel("010-1111-1004");
+		Dvd[] dvds = {dvd1, dvd2, dvd3, dvd4};
+		m1.setDvds(dvds);
 		
 		/*
 		 * 회원정보출력(회원이빌린Dvd들정보출력)
 		 */
+		m1.headerPrint();
 		m1.print();
 		
 	}

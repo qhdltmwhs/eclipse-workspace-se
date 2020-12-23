@@ -14,8 +14,12 @@ public class Dvd {
 		this.title = title;
 		this.genre = genre;
 	}
+	public static void headerPrint() {
+		System.out.println("=====================================");
+		System.out.printf("%s %s %s%n", " DVD번호", "     DVD타이틀    ", "  DVD종류  ");
+	}
 	public void print() {
-		System.out.println("\t"+no+"\t"+title+"\t"+genre);
+		System.out.printf("%8d %10s %13s%n",this.no, this.title, this.genre);
 	}
 	public int getNo() {
 		return no;

@@ -21,6 +21,13 @@ public class Book {
 		this.category = category;
 		this.desc = desc;
 	}
+	public static void headerPrint( ) {
+		System.out.println("=====================================");
+		System.out.printf("%s %s %s %s%n", "  책넘버 ", "  책제목 ", "  책분류  ", "책설명");
+	}
+	public void print() {
+		System.out.printf("%8d %6s %7s %5s%n",this.no, this.title, this.category, this.desc);
+	}
 	public int getNo() {
 		return no;
 	}
@@ -45,13 +52,4 @@ public class Book {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public static void headerPrint( ) {
-		System.out.println("=====================================");
-		System.out.printf("%s %s %s %s%n", "  책넘버 ", "  책제목 ", "  책분류  ", "책설명");
-	}
-	public void print() {
-		
-		System.out.printf("%8d %6s %7s %5s%n",this.no, this.title, this.category, this.desc);
-	}
-	
 }

@@ -9,8 +9,18 @@ public class DvdMember {
 	public DvdMember() {
 		
 	}
-
-
+	public static void headerPrint() {
+		System.out.println("=====================================");
+		System.out.printf("%s %s %s%n", "회원번호", "   회원이름   ", "     전화번호     ");
+			
+	}
+	public void print() {
+		System.out.printf("%8d %10s %17s%n",this.no, this.name, this.tel);
+		Dvd.headerPrint();
+		for (int i = 0; i < 3; i++) {
+			this.dvds[i].print();
+		}
+	}
 	public int getNo() {
 		return no;
 	}
@@ -29,8 +39,10 @@ public class DvdMember {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	
-	public void print() {
-		System.out.println(no+"\t"+name+"\t"+tel+"\t");
+	public Dvd[] getDvds() {
+		return dvds;
+	}
+	public void setDvds(Dvd[] dvds) {
+		this.dvds = dvds;
 	}
 }
