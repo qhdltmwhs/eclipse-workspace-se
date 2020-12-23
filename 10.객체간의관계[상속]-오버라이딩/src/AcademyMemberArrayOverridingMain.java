@@ -1,5 +1,5 @@
 
-public class AcademyMemberArrayMain {
+public class AcademyMemberArrayOverridingMain {
 
 	public static void main(String[] args) {
 		AcademyStudent[] students = new AcademyStudent[3];
