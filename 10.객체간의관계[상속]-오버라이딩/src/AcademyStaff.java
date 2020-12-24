@@ -1,17 +1,17 @@
 public class AcademyStaff extends AcademyMember {
-	
 	public String depart;//부서
 	public AcademyStaff() {
 	}
-	public AcademyStaff(int no, String name, String depart) {
-		this.no = no;
-		this.name = name;
+	public AcademyStaff(int no,String name,String depart) {
+		this.no=no;
+		this.name=name;
 		this.depart = depart;
 	}
 	public void print() {
 		super.print();
-		System.out.println(this.depart);
+		System.out.println(depart);
 	}
+	
 	public String getDepart() {
 		return depart;
 	}
@@ -19,5 +19,4 @@ public class AcademyStaff extends AcademyMember {
 		this.depart = depart;
 	}
 	
-
 }
