@@ -44,11 +44,36 @@ public class CarMain {
 				break;
 			}
 		}
-		System.out.println("5.입차시간 10시이후 차량여러대 찾아서 정보출력");
+		System.out.println("5.차량번호 7789번  차한대 정보출력");
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i] != null && carArray[i].getNo().equals("7789")) {
+				Car.headerPrint();
+				carArray[i].print();
+				break;
+			}
+		}
+		System.out.println("6.입차시간 10시이후 차량여러대 찾아서 정보출력");
 		Car.headerPrint();
 		for (int i = 0; i < carArray.length; i++) {
 			if((carArray[i] != null) && (carArray[i].getInTime() >= 10)) {
 				carArray[i].print();
+			}
+		}
+		System.out.println("7.2389번차량 12시 출차");
+		/*
+		 * 1. 2389번차량찾기
+		 * 2. 출차
+		 * 3. 영수증출력
+		 * 4. 주차장에서 차량삭제
+		 */
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i] != null && carArray[i].getNo().equals("2389")) {
+				carArray[i].setOutTime(12);
+				carArray[i].calculateFee();
+				Car.headerPrint();
+				carArray[i].print();
+				carArray[i] = null;
+				break;
 			}
 		}
 	}
