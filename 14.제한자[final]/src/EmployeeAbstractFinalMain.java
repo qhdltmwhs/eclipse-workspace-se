@@ -29,6 +29,8 @@ public class EmployeeAbstractFinalMain {
 			System.out.println();
 			System.out.println();
 		}
+		System.out.println("사원인센티브율 : " + Employee.INCENTIVE_RATE);
+		
 	}
 
 }

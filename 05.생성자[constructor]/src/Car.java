@@ -1,6 +1,7 @@
 
 public class Car {
 	
+	public static final int FEE_PER_HOUR = 1000;
 	private String no;//번호
 	private int inTime;//입차시간
 	private int outTime;//출차시간
@@ -29,8 +30,8 @@ public class Car {
 	
 	
 	public void calculateFee() {
-	
-		this.fee =(this.outTime-this.inTime)*1000; 
+		
+		this.fee =(this.outTime-this.inTime) * Car.FEE_PER_HOUR; 
 	}
 	// - 타이틀출력
 	public void headerPrint() {

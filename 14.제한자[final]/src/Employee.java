@@ -1,4 +1,5 @@
 public abstract class Employee {
+	public static final double INCENTIVE_RATE = 0.1;
 	private int no;
 	private String name;
 	private int pay;
@@ -24,7 +25,7 @@ public abstract class Employee {
     public final double calculateIncentive() {
     	double incentive = 0.0;
     	if(this.pay >= 1000000) {
-    		incentive = this.pay * 0.1;
+    		incentive = this.pay * Employee.INCENTIVE_RATE;
     	}
     	return incentive;
     }
