@@ -12,7 +12,7 @@ public class ArrayLengthExample {
 		/*
 		 * for(제어)문으로 scores.length 보다 작을때까지 실행
 		 * 이때 scores.length 는 배열의 길이를 얻는 읽기전용 배열객체의 필드값입니다.
-		 * 여기서 length 는 3이며 이는 곳 배열객체의 필드가 3개란 뜻입니다. 
+		 * 여기서 length 는 3이며 이는 곳 배열객체의 필드가 3개란 뜻입니다.
 		 */
 		for (int i = 0; i < scores.length; i++) {
 			/*
