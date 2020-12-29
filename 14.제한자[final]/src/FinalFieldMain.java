@@ -57,7 +57,7 @@ public class FinalFieldMain {
 		System.out.println(ff1.PORT_NUMBER);
 		
 		/*
-		The final field FinalField.NORTH cannot be assigned
+		<< The final field FinalField.NORTH cannot be assigned >>
 		FinalField.NORTH = 10;
 		FinalField.SOUTH = 20;
 		*/
