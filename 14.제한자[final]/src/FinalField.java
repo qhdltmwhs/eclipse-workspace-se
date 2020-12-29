@@ -1,4 +1,4 @@
-class FinalField {
+public class FinalField {
 	public final int PORT_NUMBER = 80;
 	public final double INCENTIVE_RATE;
 	
