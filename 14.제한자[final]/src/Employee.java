@@ -16,6 +16,18 @@ public abstract class Employee {
 	 * 		- 재정의 강제(강요)
 	 */
     public abstract void calculatePay();
+    /*
+     * 인센티브계산
+     * 		- 재정의 금지(회장님의 방침 ㅡㅡ;)
+     * 		- 모든사원들이 동일하다.
+     */
+    public final double calculateIncentive() {
+    	double incentive = 0.0;
+    	if(this.pay >= 1000000) {
+    		incentive = this.pay * 0.1;
+    	}
+    	return incentive;
+    }
     public void print() {
     	System.out.print(no+"\t"+name+"\t"+pay+"\t");
     }
