@@ -25,8 +25,20 @@ public class AccountService {
 	 * 0.계좌객체를 인자로받아서 Account[]에추가[OPTION]
 	*/
 	public void addAccount(Account newAccount) {
-		int acNum = accounts.length;
 		
+		int index = accounts.length + 1;
+		Account[] tempAccounts = new Account[index];
+	
+		for (int i = 0; i < accounts.length; i++) {
+			tempAccounts[i] = accounts[i];
+		}	
+		tempAccounts[accounts.length] = newAccount;
+		accounts = tempAccounts;
+		/*
+		System.arraycopy(accounts, 0, tempAccounts, 0, accounts.length);
+		tempAccounts[accounts.length] = newAccount;
+	 	accounts = tempAccounts;
+		*/
 	}
 	/*
 	 * 0.계좌데이타를 인자로받아서 Account[]에추가[OPTION]
