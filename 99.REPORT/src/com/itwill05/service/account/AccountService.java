@@ -9,6 +9,13 @@ package com.itwill05.service.account;
  
 public class AccountService {
 	
+	public final static int FIELD_NO=1;
+	public final static int FIELD_OWNER=2;
+	public final static int FIELD_BALANCE=3;
+	public final static int FIELD_IYUL=4;
+	public final static int SORT_ASC=1;
+	public final static int SORT_DESC=2;
+	
 	private Account[] accounts= {
 			new Account(1111, "KIM", 89000, 1.3),
 			new Account(2222, "AIM", 45000, 2.7),
@@ -159,6 +166,27 @@ public class AccountService {
 		}	
 	}
 	/*
+	 10.<< 정렬 >>
+	 * standard --> 1:번호,2:이름,3:잔고,4:이율
+	 * order    --> 1:오르차순,2:내림차순
+	 */
+	public void sort(int standard,int order) {
+		if(standard==FIELD_NO) {
+			if(order==SORT_ASC) {
+				//번호로 오름차순
+			}else if(order==SORT_DESC) {
+				//번호로 내림차순
+			}
+		}else if(standard==FIELD_OWNER) {
+			if(order==SORT_ASC) {
+				//이름으로 오름차순
+			}else if(order==SORT_DESC) {
+				//이름으로 내림차순
+			}
+		}
+		
+	}
+	/*
 	 10.계좌를 잔고순으로 오름차순정렬
 	 */
 	public void sortByBalanceAscending() {
@@ -192,9 +220,7 @@ public class AccountService {
 	public void updateAccount(Account updateAccount) {
 		for (int i = 0; i < accounts.length; i++) {
 			if(accounts[i].getNo() == updateAccount.getNo()) {
-				accounts[i].setOwner(updateAccount.getOwner());
-				accounts[i].setBalance(updateAccount.getBalance());
-				accounts[i].setIyul(updateAccount.getIyul());
+				accounts[i] = updateAccount;
 				break;
 			}
 		}
