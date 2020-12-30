@@ -84,10 +84,17 @@ public class AccountServiceReturn {
 	 */
 	public Account[] findByBalance(int balance) {
 		Account[] findAccounts=null;
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getBalance() >= balance) {
+				
+			}
+			
+		}
 		/*
 		 * A. 만족하는 객체의갯수구하기
 		 *   - 예를들어 3개라면
 		 */
+		
 		/*
 		 * B. Account객체배열생성
 		 *  -  findAccounts=new Account[3];
