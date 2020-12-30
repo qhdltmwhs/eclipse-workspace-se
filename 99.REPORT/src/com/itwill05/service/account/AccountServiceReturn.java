@@ -27,6 +27,19 @@ public class AccountServiceReturn {
 	*/
 	public void addAccount(Account newAccount) {
 		
+		int index = accounts.length + 1;
+		Account[] tempAccounts = new Account[index];
+	
+		for (int i = 0; i < accounts.length; i++) {
+			tempAccounts[i] = accounts[i];
+		}	
+		tempAccounts[accounts.length] = newAccount;
+		accounts = tempAccounts;
+		/*
+		System.arraycopy(accounts, 0, tempAccounts, 0, accounts.length);
+		tempAccounts[accounts.length] = newAccount;
+	 	accounts = tempAccounts;
+		*/
 	}
 	/*
 	 * 0.계좌데이타를 인자로받아서 Account[]에추가[OPTION]
@@ -83,47 +96,105 @@ public class AccountServiceReturn {
 	 * 5.계좌잔고 인자로받아서 잔고이상인 계좌배열객체 참조변수반환
 	 */
 	public Account[] findByBalance(int balance) {
+		
 		Account[] findAccounts=null;
+		int count = 0;
 		for (int i = 0; i < accounts.length; i++) {
 			if (accounts[i].getBalance() >= balance) {
-				
-			}
-			
+				count++;
+			}	
 		}
-		/*
-		 * A. 만족하는 객체의갯수구하기
-		 *   - 예를들어 3개라면
-		 */
-		
-		/*
-		 * B. Account객체배열생성
-		 *  -  findAccounts=new Account[3];
-		 */
-		
-		/*
-		 * C. 만족하는Account객체들 Account배열에담기
-		 */
+		int index = 0;
+		if(count == index) {
+			return findAccounts;
+		}
+		findAccounts = new Account[count];
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getBalance() >= balance) {
+				findAccounts[index] = accounts[i];
+				index++;
+			}
+		}
 		return findAccounts;
-		
 	}
+	/*
+	 * A. 만족하는 객체의갯수구하기
+	 *   - 예를들어 3개라면
+	 */
+	
+	/*
+	 * B. Account객체배열생성
+	 *  -  findAccounts=new Account[3];
+	 */
+	
+	/*
+	 * C. 만족하는Account객체들 Account배열에담기
+	 */
+	
 	/*
 	 * 6.계좌이율인자로받아서 인자이상인 계좌들배열객체 참조변수반환
 	 */
-	
+	public Account[] findByIyul(double iyul) {
+		Account[] findAccounts = null;
+		int count = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getIyul() >= iyul) {
+				count++;
+			}
+		}
+		int index = 0;
+		findAccounts = new Account[count];
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getIyul() >= iyul) {
+				findAccounts[index] = accounts[i];
+				index++;
+			}
+		}
+		return findAccounts;
+	}
 	/*
 	 * 7.계좌주이름 인자로받아서 이름과일치하는계좌들배열객체 참조변수반환
 	 */
-	
+	public Account[] findByName(String owenr) {
+		Account[] findAccounts = null;
+		int count = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getOwner().equals(owenr)) {
+				count++;
+			}
+		}
+		int index = 0;
+		findAccounts = new Account[count];
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getOwner().equals(owenr)) {
+				findAccounts[index] = accounts[i];
+				index++;
+			}
+		}
+		return findAccounts;
+	}
 	/*
 	 * 8.계좌번호와 입금할돈인자로받아서 입금
 	 */
-	
+	public void ipGum(int no, int m) {
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo() == no) {
+				accounts[i].deposit(m);
+				break;
+			}
+		}	
+	}
 	/*
 	 * 9.계좌번호와 출금할돈인자로받아서 출금
 	 */
-	
-	 
-	
+	public void chulGum(int no, int m) {
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo() == no) {
+				accounts[i].withDraw(m);;
+				break;
+			}
+		}	
+	}
 	/*
 	 10,11  정렬
 	 * standard --> 1:번호,2:이름,3:잔고,4:이율
@@ -142,28 +213,65 @@ public class AccountServiceReturn {
 			}else if(order==SORT_DESC) {
 				//이름으로 내림차순
 			}
+		}else if(standard==FIELD_BALANCE) {
+			if(order==SORT_ASC) {
+				//이름으로 오름차순
+			}else if(order==SORT_DESC) {
+				//이름으로 내림차순
+			}
+		}else if(standard==FIELD_IYUL) {
+			if(order==SORT_ASC) {
+				//이름으로 오름차순
+			}else if(order==SORT_DESC) {
+				//이름으로 내림차순
+			}
 		}
-		
 	}
-	
 	/*
 	12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
 	*/
 	public void updateAccount(Account updateAccount) {
-		
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo() == updateAccount.getNo()) {
+				accounts[i] = updateAccount;
+				break;
+			}
+		}
 	}
 	/*
 	13.번호,이름,잔고,이율 인자로받아서 계좌객체수정(update)[OPTION]
 	*/
 	public void updateAccount(int no,String owner,int balance,double iyul) {
-		
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo() == no) {
+				accounts[i].setOwner(owner);
+				accounts[i].setBalance(balance);
+				accounts[i].setIyul(iyul);
+				break;
+			}
+		}
 	}
-	
 	/*
 	 * 14.계좌번호 인자로받아서 삭제해줘[OPTION]
 	 */
-	
-	
-	
+	public void findByNoDelAccount(int no) {
 		
+		int count = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getNo() != no) {
+				count++;
+			}
+		}
+		Account[] tempAccounts = new Account[count];
+		
+		int index = 0;
+		for (int i = 0; i < accounts.length; i++) {
+			if (accounts[i].getNo() != no) {
+				tempAccounts[index] = accounts[i];
+				index++;
+			}
+		}
+		accounts = tempAccounts;
+		
+	}
 }
