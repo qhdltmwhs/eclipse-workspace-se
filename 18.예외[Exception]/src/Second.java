@@ -3,7 +3,30 @@ public class Second {
 	
 	public void method2() {
 		System.out.println("\t\t Second.method2() 실행");
-
+	
+		String str = "";
+		int length = str.length();
+		/*******************case1*******************/
+		/*
+		 * 	1. JVM 예외상황을 감지하고 예외(NullPointerException)객체를 생성
+		 * 	2. JVM은 생성한 예외객체를 반환(return)방행으로 던진다(throw).
+		 * 	3. 실행중인 스레드는 실행을 멈춘고 호출한곳(반환방향)으로 이동한다.
+		 * 	4. JVM은 던져진 예외객체의 메세지를 출력한 후 shut down
+		 */
+		
+		/*******************case2*******************/
+		/*
+		 * 	1. 내가 예외객체를 만든다.
+		 * 	2. 내가 예외객체를 던진다.
+		 * 	3. 실행중인 스레드는 실행을 멈춘고 호출한곳(반환방향)으로 이동한다.
+		 * 	4. JVM은 던져진 예외객체의 메세지를 출력한 후 shut down
+		 */
+		
+		NullPointerException exception = new NullPointerException("널예외사항발생");
+		boolean b = true;
+		if(b) {
+			throw exception;
+		}		
 		System.out.println("\t\t Second.method2() 반환");
 		return;
 	}
