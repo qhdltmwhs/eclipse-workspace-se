@@ -203,9 +203,27 @@ public class AccountServiceReturn {
 	public void sort(int standard,int order) {
 		if(standard==FIELD_NO) {
 			if(order==SORT_ASC) {
-				//번호로 오름차순
+				//계좌번호로 오름차순
+				for (int i = 0; i < accounts.length-1; i++) {
+					for (int j = 0; j < accounts.length-1; j++) {
+						if(accounts[j].getNo() > accounts[j+1].getNo()) {
+							Account tempAccount = accounts[j];
+							accounts[j]=accounts[j+1];
+							accounts[j+1]=tempAccount;
+						}
+					}
+				}
 			}else if(order==SORT_DESC) {
-				//번호로 내림차순
+				//계좌번호로 내림차순
+				for (int i = 0; i < accounts.length-1; i++) {
+					for (int j = 0; j < accounts.length-1; j++) {
+						if(accounts[j].getNo() < accounts[j+1].getNo()) {
+							Account tempAccount = accounts[j];
+							accounts[j]=accounts[j+1];
+							accounts[j+1]=tempAccount;
+						}
+					}
+				}
 			}
 		}else if(standard==FIELD_OWNER) {
 			if(order==SORT_ASC) {
@@ -215,26 +233,53 @@ public class AccountServiceReturn {
 			}
 		}else if(standard==FIELD_BALANCE) {
 			if(order==SORT_ASC) {
-				//이름으로 오름차순
+				//잔고순으로 오름차순
+				for (int i = 0; i < accounts.length-1; i++) {
+					for (int j = 0; j < accounts.length-1; j++) {
+						if(accounts[j].getBalance() > accounts[j+1].getBalance()) {
+							Account tempAccount = accounts[j];
+							accounts[j]=accounts[j+1];
+							accounts[j+1]=tempAccount;
+						}
+					}
+				}
 			}else if(order==SORT_DESC) {
-				//이름으로 내림차순
+				//잔고순으로 내림차순
+				for (int i = 0; i < accounts.length-1; i++) {
+					for (int j = 0; j < accounts.length-1; j++) {
+						if(accounts[j].getBalance() < accounts[j+1].getBalance()) {
+							Account tempAccount = accounts[j];
+							accounts[j]=accounts[j+1];
+							accounts[j+1]=tempAccount;
+						}
+					}
+				}
+				
 			}
-		}else if(standard==FIELD_IYUL) {
+		}else if(standard==FIELD_BALANCE) {
 			if(order==SORT_ASC) {
-				//이름으로 오름차순
+				//이율순으로 오름차순
+				for (int i = 0; i < accounts.length-1; i++) {
+					for (int j = 0; j < accounts.length-1; j++) {
+						if(accounts[j].getIyul() > accounts[j+1].getIyul()) {
+							Account tempAccount = accounts[j];
+							accounts[j]=accounts[j+1];
+							accounts[j+1]=tempAccount;
+						}
+					}
+				}
 			}else if(order==SORT_DESC) {
-				//이름으로 내림차순
-			}
-		}
-	}
-	/*
-	12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
-	*/
-	public void updateAccount(Account updateAccount) {
-		for (int i = 0; i < accounts.length; i++) {
-			if(accounts[i].getNo() == updateAccount.getNo()) {
-				accounts[i] = updateAccount;
-				break;
+				//이율순으로 내림차순
+				for (int i = 0; i < accounts.length-1; i++) {
+					for (int j = 0; j < accounts.length-1; j++) {
+						if(accounts[j].getIyul() < accounts[j+1].getIyul()) {
+							Account tempAccount = accounts[j];
+							accounts[j]=accounts[j+1];
+							accounts[j+1]=tempAccount;
+						}
+					}
+				}
+				
 			}
 		}
 	}
