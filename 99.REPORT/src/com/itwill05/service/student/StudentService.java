@@ -34,11 +34,19 @@ public class StudentService {
 	 * 1. 전체학생총점,평균,평점계산
 	 */
 	public void calculate() {
-		
+		for (int i = 0; i < students.length; i++) {
+			students[i].calculateTotal();
+			students[i].calculateAvg();
+			students[i].calculateGrade();
+		}
+		return;
 	}
+	
 	/*
 	 * 2. 전체학생 총점으로 석차계산
 	 */
+	public void 
+	
 	/*
 	 * 3. 전체학생반환
 	 */

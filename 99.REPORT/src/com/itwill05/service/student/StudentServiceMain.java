@@ -1,4 +1,3 @@
-  
 package com.itwill05.service.student;
 
 
@@ -17,7 +16,12 @@ public class StudentServiceMain {
 		 */
 		System.out.println("2. 전체학생 총점으로 석차계산");
 		/*
-		 * 3. 전체학생반환
+		 * 3-1. 전체학생반환
+		 */
+		System.out.println("3. 전체학생반환 ");
+		
+		/*
+		 * 3-2. 전체학생출력
 		 */
 		System.out.println("3. 전체학생출력 ");
 		studentService.print();
