@@ -1,3 +1,4 @@
+  
 package com.itwill05.service.student;
 
 
@@ -33,13 +34,10 @@ public class StudentServiceMain {
 		 */
 		System.out.println("5.  이름KIM 인 학생들 반환");
 		/*
-		 * 6. 학생총점으로 오름차순정렬
+		 * 6. 학생석차로 오름차순정렬
 		 */
-		System.out.println("6. 학생총점으로 오름차순정렬");
-		/*
-		 * 7. 학생이름순으로 오름차순정렬
-		 */
-		System.out.println("7. 학생이름으로 오름차순정렬");
+		System.out.println("6. 학생석차로 오름차순정렬");
+		
 
 	}
 

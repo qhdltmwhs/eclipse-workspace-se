@@ -26,15 +26,17 @@ public class AccountServiceReturn {
 	 * 0.계좌객체를 인자로받아서 Account[]에추가[OPTION]
 	*/
 	public void addAccount(Account newAccount) {
-		
-		int index = accounts.length + 1;
-		Account[] tempAccounts = new Account[index];
-	
+		/*
+		 * 1.배열크기증가
+		 *   - 기존배열보다큰배열생성
+		 *   - 기존데이타 옮김
+		 */
+		Account[] newAccounts=new Account[accounts.length+1];
 		for (int i = 0; i < accounts.length; i++) {
-			tempAccounts[i] = accounts[i];
-		}	
-		tempAccounts[accounts.length] = newAccount;
-		accounts = tempAccounts;
+			newAccounts[i] = accounts[i];
+		}
+		newAccounts[accounts.length] = newAccount;
+		this.accounts=newAccounts;
 		/*
 		System.arraycopy(accounts, 0, tempAccounts, 0, accounts.length);
 		tempAccounts[accounts.length] = newAccount;
@@ -45,11 +47,19 @@ public class AccountServiceReturn {
 	 * 0.계좌데이타를 인자로받아서 Account[]에추가[OPTION]
 	*/
 	public void addAccount(int no,String owner,int balance,double iyul) {
-		
+		Account newAccount=new Account(no, owner, balance, iyul);
+		/*
+		 * 1.배열크기증가
+		 *   - 기존배열보다큰배열생성
+		 *   - 기존데이타 옮김
+		 */
+		Account[] newAccounts=new Account[accounts.length+1];
+		for (int i = 0; i < accounts.length; i++) {
+			newAccounts[i] = accounts[i];
+		}
+		newAccounts[accounts.length] = newAccount;
+		this.accounts=newAccounts;
 	}
-	
-
-	
 	/*
 	 * 1.은행계좌들 총계좌수 반환메써드
 	 */
@@ -300,18 +310,18 @@ public class AccountServiceReturn {
 	 * 14.계좌번호 인자로받아서 삭제해줘[OPTION]
 	 */
 	public void findByNoDelAccount(int no) {
-		
-		int count = 0;
+
 		for (int i = 0; i < accounts.length; i++) {
-			if (accounts[i].getNo() != no) {
-				count++;
+			if (accounts[i].getNo() == no) {
+				accounts[i] = null;
+				break;
 			}
 		}
-		Account[] tempAccounts = new Account[count];
+		Account[] tempAccounts = new Account[accounts.length - 1];
 		
 		int index = 0;
 		for (int i = 0; i < accounts.length; i++) {
-			if (accounts[i].getNo() != no) {
+			if (accounts[i] != null) {
 				tempAccounts[index] = accounts[i];
 				index++;
 			}
