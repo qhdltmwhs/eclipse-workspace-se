@@ -39,7 +39,7 @@ public class AccountServiceReturnMain {
 		System.out.println("11.AccountService객체야 계좌를 예금주이름순(사전순)으로 오름차순정렬");
 		
 		System.out.println("12.AccountService야 계좌객체줄께 이름,잔고,이율 수정(update)해줘");
-		accountServiceReturn.updateAccount(new Account(3333, "FIM", 77777, 3.3));
+		accountServiceReturn.updateAccount(new Account(7777, "ZYN", 33333, 7.7));
 		System.out.println("13.AccountService야 계좌데이타줄께 이름,잔고,이율 수정(update)해줘");
 		accountServiceReturn.updateAccount(7777, "ZYN", 33333, 7.7);
 		System.out.println("14.AccountService객체야 계좌번호줄께 계좌삭제해줘");

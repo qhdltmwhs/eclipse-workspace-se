@@ -294,6 +294,24 @@ public class AccountServiceReturn {
 		}
 	}
 	/*
+	12.계좌객체를 인자로 받아서 이름,잔고,이율 수정(update)[OPTION]
+	*/
+	public void updateAccount(Account updateAccount) {
+		for (int i = 0; i < accounts.length; i++) {
+			if(accounts[i].getNo()==updateAccount.getNo()) {
+				/*********case1************
+				accounts[i].setOwner(updateAccount.getOwner());
+				accounts[i].setBalance(updateAccount.getBalance());
+				accounts[i].setIyul(updateAccount.getIyul());
+				 **************************/
+				/************case2**********/
+				accounts[i]=updateAccount;
+				break;
+			}
+			
+		}
+	}
+	/*
 	13.번호,이름,잔고,이율 인자로받아서 계좌객체수정(update)[OPTION]
 	*/
 	public void updateAccount(int no,String owner,int balance,double iyul) {

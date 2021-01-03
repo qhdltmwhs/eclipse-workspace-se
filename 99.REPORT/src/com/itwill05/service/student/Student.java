@@ -76,9 +76,6 @@ public class Student {
 
 		return grade;
 	}
-	public void calculateRankByTotal() {
-		
-	}
 	
 
 	public static void headerPrint() {

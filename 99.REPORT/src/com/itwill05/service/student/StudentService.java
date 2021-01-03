@@ -39,13 +39,22 @@ public class StudentService {
 			students[i].calculateAvg();
 			students[i].calculateGrade();
 		}
-		return;
 	}
 	
 	/*
 	 * 2. 전체학생 총점으로 석차계산
 	 */
-	public void 
+	public void calculateRankByTotal() {
+		for (int i = 0; i < students.length; i++) {
+			int rank = 0;
+			for (int j = 0; j < students.length; j++) {
+				if(students[i].getTot() < students[j].getTot()) {
+					rank++;
+				}
+			}
+			students[i].setRank(rank);
+		}
+	}
 	
 	/*
 	 * 3. 전체학생반환
