@@ -80,18 +80,18 @@ public class StudentService {
 	/*
 	 * 5. 학점A인 학생들 반환
 	 */
-	public Student[] findByGrade(char c) {
+	public Student[] findByGrade(char grade) {
 		
 		int count = 0;
 		for (int i = 0; i < students.length; i++) {
-			if(students[i].getGrade() == c) {
+			if(students[i].getGrade() == grade) {
 				count++;
 			}
 		}
 		Student[] findStudents = new Student[count];
 		int index = 0;
 		for (int i = 0; i < students.length; i++) {
-			if(students[i].getGrade() == c) {
+			if(students[i].getGrade() == grade) {
 				findStudents[index] = students[i];
 				index++;
 			}
