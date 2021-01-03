@@ -50,13 +50,12 @@ public class StudentService {
 	 */
 	public void calculateRankByTotal() {
 		for (int i = 0; i < students.length; i++) {
-			int rank = 1;
+			students[i].setRank(1);
 			for (int j = 0; j < students.length; j++) {
-				if(students[i].getTot() < students[j].getTot()) {
-					rank++;
+				if(students[i].getTot()<students[j].getTot()) {
+					students[i].increaseRank();
 				}
 			}
-			students[i].setRank(rank);
 		}
 	}
 	/*
