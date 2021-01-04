@@ -75,17 +75,35 @@ public class ArrayListMain {
 			if(tempAccount.getNo() == 5555) {
 				tempAccount.print();
 			}
-			
 		}
 		
 		System.out.println("************** 계좌이름 KIM인 계좌들 출력 **************");
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if(tempAccount.getOwner().equals("KIM")) {
+				tempAccount.print();
+			}
+		}
 		
 		System.out.println("*************** 계좌번호 5555번 계좌삭제  **************");
-		
-		
-		System.out.println("************** 계좌이름 KIM인 계좌들 삭제 **************");
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if(tempAccount.getNo() == 5555) {
+				System.out.println("before remove size : " + accountList.size());
+				accountList.remove(i);
+				System.out.println("after  remove size : " + accountList.size());
+			}
+		}
+		System.out.println("*********** 계좌이름 KIM인 계좌들 삭제[Quiz] ***********");
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if(tempAccount.getOwner().equals("KIM")) {
+				System.out.println("before remove size : " + accountList.size());
+				tempAccount.print();
+				accountList.remove(i);
+				System.out.println("after  remove size : " + accountList.size());
+				i--;
+			}
+		}
 	}
-
 }
