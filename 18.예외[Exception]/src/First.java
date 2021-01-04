@@ -1,10 +1,11 @@
+import java.io.IOException;
 
 public class First {
 	private Second second;
 	public First() {
 		second = new Second();
 	}
-	public void method1() {
+	public void method1() throws NullPointerException, IOException {
 		System.out.println("\t Frist.method1() 실행");
 		/*
 		<< Second >>

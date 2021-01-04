@@ -1,7 +1,8 @@
+import java.io.IOException;
 
 public class FirstSecondExceptionThrowMechanismMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NullPointerException, IOException {
 		System.out.println("1.main thread start");
 		First first = new First();
 		

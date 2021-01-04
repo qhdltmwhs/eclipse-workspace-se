@@ -1,7 +1,8 @@
+import java.io.IOException;
 
 public class Second {
 	
-	public void method2() {
+	public void method2() throws NullPointerException, IOException {
 		System.out.println("\t\t Second.method2() 실행");
 	
 		String str = "";
@@ -22,7 +23,7 @@ public class Second {
 		 * 	4. JVM은 던져진 예외객체의 메세지를 출력한 후 shut down
 		 */
 		
-		NullPointerException exception = new NullPointerException("널예외사항발생");
+		IOException exception = new IOException("널예외사항발생");
 		boolean b = true;
 		if(b) {
 			throw exception;
