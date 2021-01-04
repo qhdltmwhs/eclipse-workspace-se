@@ -61,6 +61,10 @@ public class Account {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Account [no=" + no + ", owner=" + owner + ", balance=" + balance + ", iyul=" + iyul + "]";
+	}
 	//getter 메쏘드
 	public int getNo() {
 		return this.no;
