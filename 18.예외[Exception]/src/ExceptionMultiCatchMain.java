@@ -9,7 +9,7 @@ public class ExceptionMultiCatchMain {
 		System.out.println("stm2");
 		Class.forName("xxxx");
 		System.out.println("stm3");
-		Socket socket = new Socket("www.dfsfsdyyy.com",80);
+		Socket socket = new Socket("www.naver.com", 80);
 		System.out.println("stm4");
 		First first = new First();
 		first.method1();
