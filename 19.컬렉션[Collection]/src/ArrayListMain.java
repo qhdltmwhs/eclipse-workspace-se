@@ -99,8 +99,9 @@ public class ArrayListMain {
 			Account tempAccount = (Account)accountList.get(i);
 			if(tempAccount.getOwner().equals("KIM")) {
 				System.out.println("before remove size : " + accountList.size());
-				tempAccount.print();
-				accountList.remove(i);
+				//tempAccount.print();
+				//accountList.remove(i);
+				(tempAccount = (Account)accountList.remove(i)).print();
 				System.out.println("after  remove size : " + accountList.size());
 				i--;
 			}
