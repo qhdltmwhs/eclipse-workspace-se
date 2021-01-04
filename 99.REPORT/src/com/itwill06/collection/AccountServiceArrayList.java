@@ -80,7 +80,10 @@ public class AccountServiceArrayList {
 	 */
 	public int totBalance(){
 		int totBalance=0;
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			totBalance += tempAccount.getBalance();
+		}
 		return totBalance;
 	}
 	/*
@@ -88,7 +91,13 @@ public class AccountServiceArrayList {
 	 */
 	public Account findByNo(int no) {
 		Account findAccount=null;
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if (tempAccount.getNo() == no) {
+				findAccount = (Account)accountList.get(i);
+				break;
+			}
+		}
 		return findAccount;
 	}
 	/*
@@ -96,30 +105,50 @@ public class AccountServiceArrayList {
 	 */
 	public ArrayList<Account> findByBalance(int balance) {
 		ArrayList<Account> findAccountList=new ArrayList<Account>();
-		
-		
-		
-		return findAccountList;
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if (tempAccount.getBalance() >= balance) {
+				findAccountList.add((Account)accountList.get(i));
+			}
+		}
+		return findAccountList;	
 	}
 	
 	/*
 	 *  8.6666번계좌 4000원 입금
 	 */
 	public void ipGum(int no,int m) {
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if (tempAccount.getNo() == no) {
+				tempAccount.deposit(m);
+				break;
+			}
+		}
 	}
 	/*
 	 *  9.1111번계좌 5000원 출금
 	 */
 	public void chulGum(int no,int m) {
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if(tempAccount.getNo() == no) {
+				tempAccount.withDraw(m);
+				break;	
+			}
+		}
 	}
 	/*
 	 7.은행계좌들 중에 계좌주이름이 AIM인 계좌들반환
 	*/
 	public ArrayList<Account> findByName(String owner) {
 		ArrayList<Account> findAccountList=new ArrayList<Account>();
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempacAccount = (Account)accountList.get(i);
+			if(tempacAccount.getOwner().equals(owner)) {
+				 findAccountList.add((Account)accountList.get(i)) ;
+			}
+		}
 		return findAccountList;
 	}
 	/*
@@ -127,7 +156,12 @@ public class AccountServiceArrayList {
 	 */
 	public ArrayList<Account> findByVip(int  balance) {
 		ArrayList<Account> findAccountList=new ArrayList<Account>();
-		
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if (tempAccount.getBalance() >= balance) {
+				findAccountList.add((Account)accountList.get(i));
+			}
+		}
 		return findAccountList;
 	}
 	/*
@@ -150,10 +184,23 @@ public class AccountServiceArrayList {
 	 15.6666번계좌의 이름,잔고,이율 수정(update)
 	 */
 	public void updateAccount(int no,String owner,int balance,double iyul) {
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if(tempAccount.getNo() == no) {
+				accountList.set(i, new Account(no, owner, balance, iyul));
+				break;
+			}
+		}
 	}
 	
-	public void updateAccount(Account updateAccount) {
-		
+	public void updateAccount(int no, Account updateAccount) {
+		for (int i = 0; i < accountList.size(); i++) {
+			Account tempAccount = (Account)accountList.get(i);
+			if(tempAccount.getNo() == no) {
+				accountList.set(i, updateAccount);
+				break;
+			}
+		}
 	}
 	
 	
