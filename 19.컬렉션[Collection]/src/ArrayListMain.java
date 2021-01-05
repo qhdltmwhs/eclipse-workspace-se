@@ -94,6 +94,7 @@ public class ArrayListMain {
 				System.out.println("after  remove size : " + accountList.size());
 			}
 		}
+		
 		System.out.println("*********** 계좌이름 KIM인 계좌들 삭제[Quiz] ***********");
 		for (int i = 0; i < accountList.size(); i++) {
 			Account tempAccount = (Account)accountList.get(i);
@@ -106,5 +107,11 @@ public class ArrayListMain {
 				i--;
 			}
 		}
+		
+		System.out.println("---------------ArrayList[String, Wrapper Class][참조형]---------------");
+		
+		
+		
+		
 	}
 }
