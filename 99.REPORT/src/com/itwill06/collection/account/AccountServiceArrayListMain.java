@@ -1,4 +1,4 @@
-package com.itwill06.collection;
+package com.itwill06.collection.account;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ public class AccountServiceArrayListMain {
 		System.out.println("4.AccountServiceArrayList야 계좌번호줄께 계좌한개반환해줘");
 		Account findAccount = accountServiceArrayList.findByNo(5555);
 		System.out.println("계좌한개[main]");
-		//findAccount.print();
+		findAccount.print();
 		System.out.println("5.AccountServiceArrayList야 계좌잔고줄께 잔고이상인 계좌들반환해줘[OPTION]");
 		ArrayList<Account> findAccounts = accountServiceArrayList.findByBalance(50000);
 		System.out.println(" 반환계좌수:" + findAccounts.size());
@@ -52,7 +52,7 @@ public class AccountServiceArrayListMain {
 		System.out.println(accountServiceArrayList.findByNo(6666));
 		System.out.println(" 12.8888번계좌삭제");
 		Account deleteAccount = accountServiceArrayList.deleteByNo(8888);
-		//deleteAccount.print();
+		deleteAccount.print();
 		System.out.println("-----------전체계좌 출력-------------");
 		accountServiceArrayList.print();
 	}

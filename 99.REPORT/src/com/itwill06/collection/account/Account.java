@@ -1,4 +1,4 @@
-package com.itwill06.collection;
+package com.itwill06.collection.account;
 /*
  * 은행에서 계좌객체를 생성하기위한 클래스
  */
