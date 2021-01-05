@@ -17,23 +17,19 @@ public class CarService {
 	*/
 	public boolean ipChar(Car inCar) {
 		boolean isSuccess = false;
-		boolean isDuplicate = true;
 		for (int i = 0; i < carArray.length; i++) {
 			if(carArray[i] != null && carArray[i].getNo().equals(inCar.getNo())) {
 				System.out.println(inCar.getNo() + " 차량번호 중복~~!!");
-				isDuplicate = false;
-				break;
+				return isSuccess;
 			}
 		}
-		if (isDuplicate) {
-			for (int i = 0; i < carArray.length; i++) {
-				if(carArray[i] ==  null) {
-					carArray[i] = inCar;
-					isSuccess = true;
-					break;
-				}
-			}	
-		}
+		for (int i = 0; i < carArray.length; i++) {
+			if(carArray[i] ==  null) {
+				carArray[i] = inCar;
+				isSuccess = true;
+				break;
+			}
+		}	
 		return isSuccess;
 	}
 	//1. 전체차량출력
