@@ -1,12 +1,11 @@
 package generic;
-import java.awt.event.MouseWheelListener;
 import java.util.HashSet;
 import java.util.Iterator;
 
 public class HashSetMain {
 
 	public static void main(String[] args) {
-		HashSet accSet = new HashSet();
+		HashSet<Account> accSet = new HashSet<Account>();
 		System.out.println("#set size:"+accSet.size());
 		Account acc1=new Account(1111, "KIM", 33000, 0.05);
 		Account acc2=new Account(2222, "KIM", 23000, 0.15);
@@ -42,13 +41,21 @@ public class HashSetMain {
 			System.out.println("acc1의 주소 존재:"+acc1);
 		}
 		System.out.println("-------------전체출력-----------------");
-		System.out.println("############## iteration ################");
-		Iterator accIter = accSet.iterator();
-		System.out.println(accIter);
-		while (accIter.hasNext()) {
-			Account tempAccount = (Account) accIter.next();
+		
+		System.out.println("################## iteration #######################");
+		Iterator<Account> accIter = accSet.iterator();
+		while(accIter.hasNext()) {
+			Account tempAccount = accIter.next();
 			tempAccount.print();
 		}
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}

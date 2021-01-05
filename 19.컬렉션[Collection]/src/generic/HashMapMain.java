@@ -6,7 +6,7 @@ import java.util.Set;
 public class HashMapMain {
 
 	public static void main(String[] args) {
-		HashMap carMap=new HashMap();
+		HashMap<String, Car> carMap=new HashMap<String, Car>();
 		System.out.println("#map size:"+carMap.size());
 		System.out.println("---------put(key,value)----------");
 		Car c1=new Car("34호1234", 12);
@@ -22,11 +22,11 @@ public class HashMapMain {
 		System.out.println("#map size:"+carMap.size());
 		System.out.println(carMap);
 		System.out.println("-------------get(key)--------------");
-		Car getCar=(Car)carMap.get("12미1344");
+		Car getCar = carMap.get("12미1344");
 		getCar.setOutTime(19);
 		getCar.calculateFee();
 		getCar.print();
-		getCar = (Car)carMap.get("99홓3333");
+		getCar = carMap.get("99홓3333");
 		if(getCar!=null) {
 			getCar.print();
 		}else {
@@ -34,12 +34,12 @@ public class HashMapMain {
 		}
 		System.out.println("---------containsKey(key)----------------");
 		if(carMap.containsKey("22가9977")) {
-			getCar=(Car)carMap.get("22가9977");
+			getCar = carMap.get("22가9977");
 			getCar.print();
 		}
 		
 		System.out.println("---------remove(key)----------------");
-		Car removeCar = (Car)carMap.remove("22양7844");
+		Car removeCar = carMap.remove("22양7844");
 		if(removeCar!=null) {
 			System.out.println("삭제성공:"+removeCar);
 			removeCar.print();
@@ -47,12 +47,11 @@ public class HashMapMain {
 		System.out.println("# map size:"+carMap.size());
 		System.out.println("-------------주자창전체차량출력---------------");
 		System.out.println("############## iteration ################");
-		Set keySet = carMap.keySet();
-		System.out.println(carMap.keySet());
-		Iterator keyIter = keySet.iterator();
+		Set<String> keySet = carMap.keySet();
+		Iterator<String> keyIter = keySet.iterator();
 		while (keyIter.hasNext()) {
-			String tempKey = (String)keyIter.next();
-			Car car = (Car)carMap.get(tempKey);
+			String tempKey = keyIter.next();
+			Car car = carMap.get(tempKey);
 			car.print();
 		}
 	}
