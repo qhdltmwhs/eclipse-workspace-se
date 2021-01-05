@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListMain {
 
@@ -69,11 +70,21 @@ public class ArrayListMain {
 			Account tempAccount = (Account)accountList.get(i);
 			tempAccount.print();
 		}
+		
+		System.out.println("############## iteration ################");
+		Iterator accIter = accountList.iterator();
+		while (accIter.hasNext()) {
+			Account tempAccount = (Account) accIter.next();
+			tempAccount.print();
+		}
+		
+		
 		System.out.println("*************** 계좌번호 5555번 1개 출력 ***************");
 		for (int i = 0; i < accountList.size(); i++) {
 			Account tempAccount = (Account)accountList.get(i);
 			if(tempAccount.getNo() == 5555) {
 				tempAccount.print();
+				break;
 			}
 		}
 		
@@ -96,6 +107,7 @@ public class ArrayListMain {
 		}
 		
 		System.out.println("*********** 계좌이름 KIM인 계좌들 삭제[Quiz] ***********");
+		Account.headerPrint();
 		for (int i = 0; i < accountList.size(); i++) {
 			Account tempAccount = (Account)accountList.get(i);
 			if(tempAccount.getOwner().equals("KIM")) {

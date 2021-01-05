@@ -1,4 +1,6 @@
+import java.awt.event.MouseWheelListener;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class HashSetMain {
 
@@ -39,7 +41,12 @@ public class HashSetMain {
 			System.out.println("acc1의 주소 존재:"+acc1);
 		}
 		System.out.println("-------------전체출력-----------------");
-		
+		System.out.println("############## iteration ################");
+		Iterator accIter = accSet.iterator();
+		while (accIter.hasNext()) {
+			Account tempAccount = (Account) accIter.next();
+			tempAccount.print();
+		}
 		
 		
 	}
