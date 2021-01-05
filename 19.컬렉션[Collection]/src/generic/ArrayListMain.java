@@ -1,3 +1,4 @@
+package generic;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -31,7 +32,7 @@ public class ArrayListMain {
 			tempAccount.print();
 		}
 		System.out.println("---------------ArrayList[참조형]---------------");
-		ArrayList accountList = new ArrayList();
+		ArrayList<Account> accountList = new ArrayList<Account>();
 		int size = accountList.size();
 		System.out.println("#size : " + size);
 		
@@ -54,34 +55,38 @@ public class ArrayListMain {
 		System.out.println("#size : " + accountList.size());
 		
 		System.out.println("***************3.get**************");
-		Account getAccount = (Account)accountList.get(3);
+		Account getAccount = accountList.get(3);
 		getAccount.print();
-		getAccount = (Account)accountList.get(accountList.size() - 1);
+		getAccount = accountList.get(accountList.size() - 1);
 		getAccount.print();
 		
 		System.out.println("***************4.remove**************");
-		Account removeAccount = (Account)accountList.remove(0);
+		Account removeAccount = accountList.remove(0);
 		removeAccount.print();
 		System.out.println("#size : " + accountList.size());
 		System.out.println(accountList);
 		
 		System.out.println("***************5.전체출력***************");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account)accountList.get(i);
-			tempAccount.print();
+			accountList.get(i).print();;
+		}
+		
+		System.out.println("********5.전체출력 [enhanced for]********");
+		for (Account account : accountList) {
+			account.print();
 		}
 		
 		System.out.println("############## iteration ################");
-		Iterator accIter = accountList.iterator();
+		Iterator<Account> accIter = accountList.iterator();
 		while (accIter.hasNext()) {
-			Account tempAccount = (Account) accIter.next();
+			Account tempAccount = accIter.next();
 			tempAccount.print();
 		}
 		
 		
 		System.out.println("*************** 계좌번호 5555번 1개 출력 ***************");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account)accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			if(tempAccount.getNo() == 5555) {
 				tempAccount.print();
 				break;
@@ -90,7 +95,7 @@ public class ArrayListMain {
 		
 		System.out.println("************** 계좌이름 KIM인 계좌들 출력 **************");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account)accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			if(tempAccount.getOwner().equals("KIM")) {
 				tempAccount.print();
 			}
@@ -98,7 +103,7 @@ public class ArrayListMain {
 		
 		System.out.println("*************** 계좌번호 5555번 계좌삭제  **************");
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account)accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			if(tempAccount.getNo() == 5555) {
 				System.out.println("before remove size : " + accountList.size());
 				accountList.remove(i);
@@ -109,12 +114,12 @@ public class ArrayListMain {
 		System.out.println("*********** 계좌이름 KIM인 계좌들 삭제[Quiz] ***********");
 		Account.headerPrint();
 		for (int i = 0; i < accountList.size(); i++) {
-			Account tempAccount = (Account)accountList.get(i);
+			Account tempAccount = accountList.get(i);
 			if(tempAccount.getOwner().equals("KIM")) {
 				System.out.println("before remove size : " + accountList.size());
 				//tempAccount.print();
 				//accountList.remove(i);
-				(tempAccount = (Account)accountList.remove(i)).print();
+				(tempAccount = accountList.remove(i)).print();
 				System.out.println("after  remove size : " + accountList.size());
 				i--;
 			}

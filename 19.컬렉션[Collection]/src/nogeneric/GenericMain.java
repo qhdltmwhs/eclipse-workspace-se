@@ -1,3 +1,4 @@
+package nogeneric;
 class GenericNoClass {
 	private Object member;
 

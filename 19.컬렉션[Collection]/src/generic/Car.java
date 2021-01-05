@@ -1,3 +1,4 @@
+package generic;
 public class Car {
 	public static final int FEE_PER_HOUR=1000;
 	private String no;//번호

@@ -1,3 +1,4 @@
+package generic;
 import java.awt.event.MouseWheelListener;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -43,6 +44,7 @@ public class HashSetMain {
 		System.out.println("-------------전체출력-----------------");
 		System.out.println("############## iteration ################");
 		Iterator accIter = accSet.iterator();
+		System.out.println(accIter);
 		while (accIter.hasNext()) {
 			Account tempAccount = (Account) accIter.next();
 			tempAccount.print();

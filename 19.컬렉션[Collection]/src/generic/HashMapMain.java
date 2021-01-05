@@ -1,4 +1,7 @@
+package generic;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 public class HashMapMain {
 
@@ -44,9 +47,14 @@ public class HashMapMain {
 		System.out.println("# map size:"+carMap.size());
 		System.out.println("-------------주자창전체차량출력---------------");
 		System.out.println("############## iteration ################");
-		
-		
-		
+		Set keySet = carMap.keySet();
+		System.out.println(carMap.keySet());
+		Iterator keyIter = keySet.iterator();
+		while (keyIter.hasNext()) {
+			String tempKey = (String)keyIter.next();
+			Car car = (Car)carMap.get(tempKey);
+			car.print();
+		}
 	}
 
 }
