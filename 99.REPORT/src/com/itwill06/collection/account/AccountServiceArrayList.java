@@ -1,6 +1,8 @@
 package com.itwill06.collection.account;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 /*
  * Account객체전체에관련된 업무를 실행할클래스
@@ -156,29 +158,14 @@ public class AccountServiceArrayList {
 	 10.계좌를 잔고순으로 오름차순정렬
 	*/
 	public void sortByBalanceAsc() {
-		for (int i = 0; i < accountList.size(); i++) {
-			for (int j = 0; j < accountList.size() - 1; j++) {
-				if(accountList.get(j).getBalance() > accountList.get(j+1).getBalance()) {
-					Account tempAcc = accountList.get(j + 1);
-					accountList.set(j + 1, accountList.get(j));
-					accountList.set(j, tempAcc);
-				}
-			}
-		}	
+		Collections.sort(accountList);
 	}
 	/*
 	 11.계좌를 잔고순으로 내림차순정렬
 	 */
 	public void sortByBalanceDesc() {
-		for (int i = 0; i < accountList.size(); i++) {
-			for (int j = 0; j < accountList.size() - 1; j++) {
-				if(accountList.get(j).getBalance() < accountList.get(j+1).getBalance()) {
-					Account tempAcc = accountList.get(j + 1);
-					accountList.set(j + 1, accountList.get(j));
-					accountList.set(j, tempAcc);
-				}
-			}
-		}
+		Collections.sort(accountList);
+		Collections.reverse(accountList);
 	}
 	
 	/*

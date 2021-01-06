@@ -2,7 +2,7 @@ package com.itwill06.collection.account;
 /*
  * 은행에서 계좌객체를 생성하기위한 클래스
  */
-public class Account {
+public class Account implements Comparable<Account>{
 	/*
 	 * 멤버필드
 	 */
@@ -87,6 +87,11 @@ public class Account {
 	}
 	public void setIyul(double iyul) {
 		this.iyul = iyul;
+	}
+	@Override
+	public int compareTo(Account o) {
+		
+		return this.balance - o.getBalance();
 	}
 	
 	
