@@ -2,7 +2,7 @@ package generic;
 /*
  * 은행에서 계좌객체를 생성하기위한 클래스
  */
-public class Account {
+public class Account implements Comparable<Account> {
 	/*
 	 * 멤버필드
 	 */
@@ -16,6 +16,7 @@ public class Account {
 	public Account() {
 		
 	}
+	
 	public Account(int no, String owner, int balance, double iyul) {
 		this.no = no;
 		this.owner = owner;
@@ -61,12 +62,12 @@ public class Account {
 		System.out.printf("%d  %s  %d  %4.1f %n",this.no,tempOwner,this.balance,this.iyul);
 		
 	}
-	/*
+	
 	@Override
 	public String toString() {
-		return "Account [no=" + no + ", owner=" + owner + ", balance=" + balance + ", iyul=" + iyul + "]";
+		return "Account [no=" + no + ", owner=" + owner + ", balance=" + balance + ", iyul=" + iyul + "]\n";
 	}
-	*/
+	
 	//getter 메쏘드
 	public int getNo() {
 		return this.no;
@@ -93,6 +94,13 @@ public class Account {
 	public void setIyul(double iyul) {
 		this.iyul = iyul;
 	}
-	
+	@Override
+	public int compareTo(Account o) {
+		if(this.balance > ((Account)o).balance) {
+			return 1;
+		}else {
+			return -1;
+		}
+	}
 	
 }
