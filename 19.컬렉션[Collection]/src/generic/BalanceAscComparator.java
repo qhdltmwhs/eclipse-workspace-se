@@ -2,7 +2,7 @@ package generic;
 
 import java.util.Comparator;
 
-public class balanceAscComparator implements Comparator<Account> {
+public class BalanceAscComparator implements Comparator<Account> {
 	
 	@Override
 	public int compare(Account acc1, Account acc2) {

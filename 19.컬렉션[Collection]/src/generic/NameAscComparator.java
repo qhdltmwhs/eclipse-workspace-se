@@ -10,7 +10,11 @@ public class NameAscComparator implements Comparator<Account> {
 	public int compare(Account o1, Account o2) {
 		String name1 = o1.getOwner();
 		String name2 = o2.getOwner();
-		return name1.compareTo(name2);
+		int result = name1.compareTo(name2);
+		if (result == 0) {
+			return o1.getNo() - o2.getNo();
+		}
+		return result;
 	}
 
 }

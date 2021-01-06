@@ -112,23 +112,13 @@ public class AccountServiceArrayList {
 	 *  8.6666번계좌 4000원 입금
 	 */
 	public void ipGum(int no,int m) {
-		for (Account account : accountList) {
-			if(account.getNo() == no) {
-				account.deposit(m);
-				break;
-			}
-		}
+		this.findByNo(no).deposit(m);
 	}
 	/*
 	 *  9.1111번계좌 5000원 출금
 	 */
 	public void chulGum(int no,int m) {
-		for (Account account : accountList) {
-			if(account.getNo() == no) {
-				account.withDraw(m);
-				break;
-			}
-		}
+		this.findByNo(no).withDraw(m);
 	}
 	/*
 	 7.은행계좌들 중에 계좌주이름이 AIM인 계좌들반환
@@ -164,7 +154,7 @@ public class AccountServiceArrayList {
 	 11.계좌를 잔고순으로 내림차순정렬
 	 */
 	public void sortByBalanceDesc() {
-		Collections.sort(accountList);
+		this.sortByBalanceAsc();
 		Collections.reverse(accountList);
 	}
 	

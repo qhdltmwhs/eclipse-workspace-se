@@ -3,6 +3,7 @@ class Member{
 	private String name;
 	public Member() {
 	}
+	
 	/*
 	 * alt + shift + s(source)
 	 *   생성자				: o

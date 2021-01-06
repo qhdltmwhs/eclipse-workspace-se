@@ -141,7 +141,7 @@ public class Arrays클래스Main {
 		}
 		System.out.println();
 		System.out.println("-----잔고 오름차순-----");
-		Comparator<Account> balanceAscComparator = new balanceAscComparator();
+		Comparator<Account> balanceAscComparator = new BalanceAscComparator();
 		Arrays.sort(accounts, balanceAscComparator);
 		for (Account account : accounts) {
 			account.print();
@@ -154,7 +154,7 @@ public class Arrays클래스Main {
 			account.print();
 		}
 		System.out.println();
-	
+		
 	}
 
 }

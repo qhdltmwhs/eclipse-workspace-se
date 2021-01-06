@@ -147,6 +147,7 @@ public class ArrayListMain {
 		System.out.println("---remove---");
 		System.out.println("#size:"+scoreList.size());
 		Integer removeScore = scoreList.remove(0);
+		System.out.println(removeScore);
 		int rscore=removeScore;//UnBoxing
 		System.out.println(rscore);
 		System.out.println("#size:"+scoreList.size());
