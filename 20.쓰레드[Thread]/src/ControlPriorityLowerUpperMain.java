@@ -12,6 +12,7 @@ public class ControlPriorityLowerUpperMain {
 		 */
 		System.out.println("ControlPriorityUpperThread---> " + ut.getPriority());
 		System.out.println("ControlPriorityLowerThread---> " + lt.getPriority());
+		// cmd 모드에서 실행시킬것~!
 		ut.setPriority(10);
 		lt.setPriority(1);
 		ut.start();
