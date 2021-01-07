@@ -13,6 +13,7 @@ public class ControlPriorityLowerUpperMain {
 		System.out.println("ControlPriorityUpperThread---> " + ut.getPriority());
 		System.out.println("ControlPriorityLowerThread---> " + lt.getPriority());
 		/*
+		 *  << 쓰레드실행.png 참조 >>
 		 *  cmd 모드에서 실행시킬것~!
 		 *  >cd bin 폴더 주소 ex) C:\JAVA_BACKEND\eclipse-workspace-se\20.쓰레드[Thread]\bin
 		 *  >java ControlPriorityLowerUpperMain
