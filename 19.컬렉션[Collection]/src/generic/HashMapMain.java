@@ -22,6 +22,8 @@ public class HashMapMain {
 		System.out.println("#map size:"+carMap.size());
 		System.out.println(carMap);
 		System.out.println("-------------get(key)--------------");
+		Car getCar1 = carMap.get("22가9977");
+		System.out.println(getCar1.getInTime());
 		Car getCar = carMap.get("12미1344");
 		getCar.setOutTime(19);
 		getCar.calculateFee();

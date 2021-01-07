@@ -1,11 +1,10 @@
 package com.itwill06.collection.car;
 
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 public class CarServiceHashMap {
 	
@@ -28,23 +27,38 @@ public class CarServiceHashMap {
 	 */
 	public boolean ipCha(Car inCar) {
 		boolean isSuccess = false;
-		
-		return isSuccess;
+		if(carMap.containsKey(inCar.getNo())) {
+			return isSuccess;
+		}
+		if(carMap.size() == count) {
+			return isSuccess;
+		}
+		carMap.put(inCar.getNo(), inCar);
+		return isSuccess = true;
 	}
 
 	/*
 	 * 1. 전체차량출력
 	 */
 	public void print() {
-		
+		Car.headerPrint();
+		Set<String> keySet = carMap.keySet();
+		Iterator<String> keyIter = keySet.iterator();
+		while (keyIter.hasNext()) {
+			String tempKey = keyIter.next();
+			Car tempCar = carMap.get(tempKey);
+			tempCar.print();
+		}
 	}
 
 	/*
 	 * 5. 차량번호(4567번) 인자받아서 차객체한대 참조변수반환
 	 */
 	public Car findByNo(String no) {
-		Car findCar =null;
+		Car findCar = null;
+		findCar = carMap.get(no);	
 		return findCar;
+		
 	}
 
 	/*
@@ -52,8 +66,15 @@ public class CarServiceHashMap {
 	 */
 	public ArrayList<Car> findByInTime(int inTime) {
 		ArrayList<Car> findCars = new ArrayList<Car>();
-		
-		
+		Set<String> keySet = carMap.keySet();
+		Iterator<String> keyIter = keySet.iterator();
+		while (keyIter.hasNext()) {
+			String tempKey = keyIter.next();
+			Car tempCar = carMap.get(tempKey);
+			if(tempCar.getInTime() >= inTime) {
+				findCars.add(tempCar);
+			}
+		}
 		return findCars;
 	}
 
@@ -62,7 +83,11 @@ public class CarServiceHashMap {
 	 */
 	public Car chulCha(String no, int outTime) {
 		Car removeCar= null;
-		
+		removeCar = carMap.remove(no);
+		if(removeCar != null) {
+			removeCar.setOutTime(outTime);
+			removeCar.calculateFee();
+		}
 		return removeCar;
 	}
 	/*
