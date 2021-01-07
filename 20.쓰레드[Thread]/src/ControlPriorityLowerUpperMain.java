@@ -12,7 +12,12 @@ public class ControlPriorityLowerUpperMain {
 		 */
 		System.out.println("ControlPriorityUpperThread---> " + ut.getPriority());
 		System.out.println("ControlPriorityLowerThread---> " + lt.getPriority());
-		// cmd 모드에서 실행시킬것~!
+		/*
+		 *  cmd 모드에서 실행시킬것~!
+		 *  >cd bin 폴더 주소 ex) C:\JAVA_BACKEND\eclipse-workspace-se\20.쓰레드[Thread]\bin
+		 *  >java ControlPriorityLowerUpperMain
+		 *  	클래스파일명 확장자없이! ex) .class 빼고 복사 ctrl + c  후 cmd창에 마우스 오른쪽 클릭하면 붙여넣기 자동
+		 */
 		ut.setPriority(10);
 		lt.setPriority(1);
 		ut.start();
