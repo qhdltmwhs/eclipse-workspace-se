@@ -24,11 +24,12 @@ public class HashtableExample {
 			System.out.println("비밀번호: ");
 			//키보드로 입력한 비밀번호를 읽음
 			String passWord = scanner.nextLine();
+			System.out.println();
 			
 			//아이디인 key가 존재하는지 확인
 			if(map.containsKey(id)) {
 				//비밀번호를 비교
-				if(map.containsValue(passWord)) {
+				if(map.get(id).equals(passWord)) {
 					System.out.println("로그인되었습니다.");
 					break;
 				}else {
