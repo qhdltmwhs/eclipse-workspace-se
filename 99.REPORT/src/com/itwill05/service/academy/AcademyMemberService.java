@@ -259,62 +259,17 @@ public class AcademyMemberService {
 	*/
 	public AcademyMember[] findAcademyMembers(AcademyMember searchMember) {
 		AcademyMember[] findMembers=null;
-		int count = 0;
-		int index = 0;
+		
 		if(searchMember instanceof AcademyStudent) {
-			AcademyStudent sm = (AcademyStudent)searchMember;
-			AcademyMember[] students = findAcademyMembersByType(STUDENT);
-			for (int i = 0; i < students.length; i++) {
-				AcademyStudent tm = ((AcademyStudent)students[i]);
-				if(sm.getBan().equals(tm.getBan())) {
-					count++;
-				}
-			}
-			findMembers = new AcademyMember[count];
-			for (int i = 0; i < students.length; i++) {
-				AcademyStudent tm = ((AcademyStudent)students[i]);
-				if(sm.getBan().equals(tm.getBan())) {
-					findMembers[index] = students[i];
-					index++;
-				}
-			}
-		}
-		if(searchMember instanceof AcademyGangsa) {
-			AcademyGangsa sm = (AcademyGangsa)searchMember;
-			AcademyMember[] gangsas = findAcademyMembersByType(GANGSA);
-			for (int i = 0; i < gangsas.length; i++) {
-				AcademyGangsa tm = ((AcademyGangsa)gangsas[i]);
-				if(sm.getSubject().equals(tm.getSubject())) {
-					count++;
-				}
-			}
-			findMembers = new AcademyMember[count];
-			for (int i = 0; i < gangsas.length; i++) {
-				AcademyGangsa tm = ((AcademyGangsa)gangsas[i]);
-				if(sm.getSubject().equals(tm.getSubject())) {
-					findMembers[index] = gangsas[i];
-					index++;
-				}
-			}
-		}
-		if(searchMember instanceof AcademyStaff) {
-			AcademyStaff sm = (AcademyStaff)searchMember;
-			AcademyMember[] staffs = findAcademyMembersByType(STAFF);
-			for (int i = 0; i < staffs.length; i++) {
-				AcademyStaff tm = ((AcademyStaff)staffs[i]);
-				if(sm.getDepart().equals(tm.getDepart())) {
-					count++;
-				}
-			}
-			findMembers = new AcademyMember[count];
-			for (int i = 0; i < staffs.length; i++) {
-				AcademyStaff tm = ((AcademyStaff)staffs[i]);
-				if(sm.getDepart().equals(tm.getDepart())) {
-					findMembers[index] = staffs[i];
-					index++;
-				}
-			}
-		}
+			AcademyStudent student = (AcademyStudent) searchMember;
+			findMembers = findAcademyStudentByBan(student.getBan());
+		}else if(searchMember instanceof AcademyGangsa) {
+			AcademyGangsa gangsa = (AcademyGangsa) searchMember;
+			findMembers = findAcademyGangsaBySubject(gangsa.getSubject());
+		}else if(searchMember instanceof AcademyStaff) {
+			AcademyStaff staff = (AcademyStaff) searchMember;
+			findMembers = findAcademyGangsaBySubject(staff.getDepart());
+		}		
 		return findMembers;
 	}	
 }
