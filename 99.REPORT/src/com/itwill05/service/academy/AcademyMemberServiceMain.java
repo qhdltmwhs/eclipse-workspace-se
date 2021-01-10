@@ -13,7 +13,7 @@ public class AcademyMemberServiceMain {
 		System.out.println("2-2.이름 KIM 인 AcademyMember 배열객체 참조변수반환해줘");
 		academyMemberService.findByName("KIM");
 		System.out.println("3.AcademyMember 중에서 AcademyStudent객체들 모두반환해줘 [ AcademyMember[] 객체주소반환 ]");
-		AcademyMember[] findMembers = academyMemberService.findAcademyMembersByType(1);
+		AcademyMember[] findMembers = academyMemberService.findAcademyMembersByType(AcademyMemberService.STAFF);
 		for (AcademyMember member : findMembers) {
 			member.print();
 		}
