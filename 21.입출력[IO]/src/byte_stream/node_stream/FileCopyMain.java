@@ -14,7 +14,7 @@ public class FileCopyMain {
 		while (true) {
 			int readByte = fis.read();
 			if(readByte == -1) break;
-			//System.out.println(Integer.toBinaryString(readByte));
+			System.out.println(Integer.toBinaryString(readByte));
 			fos.write(readByte);
 			count++;
 			//진행상황표현 카운트를 1024 * 1024 나눈 나머지가 0일때 실행
