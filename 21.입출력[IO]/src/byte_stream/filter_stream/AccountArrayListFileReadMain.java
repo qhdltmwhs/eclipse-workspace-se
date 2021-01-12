@@ -15,7 +15,8 @@ public class AccountArrayListFileReadMain {
 		DataInputStream accountListDis =
 				new DataInputStream(
 						new FileInputStream("accountList.dat"));
-		List<Account> accountList = new ArrayList<>();
+		
+		List<Account> accountList = new ArrayList<Account>();
 		int size = accountListDis.readInt();
 		for (int i = 0; i < size; i++) {
 			

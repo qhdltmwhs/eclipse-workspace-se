@@ -27,6 +27,7 @@ public class ObjectInputStreamMain {
 		System.out.println("----objects.ser-->Account Object------");
 		Account account2 = (Account)ois.readObject();
 		account2.print();
+		
 		ois.close();
 	}
 

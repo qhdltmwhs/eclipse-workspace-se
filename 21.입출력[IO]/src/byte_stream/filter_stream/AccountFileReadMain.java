@@ -10,16 +10,16 @@ public class AccountFileReadMain {
 		 * 파일(accounts.dat) --> Account객체내용읽어서 Account객체생성
 		 */
 		System.out.println(">>>파일(accounts.dat) --> Account객체내용읽어서 Account객체생성");
-		DataInputStream accountDis=
+		DataInputStream accountDis =
 				new DataInputStream(
 						new FileInputStream("accounts.dat"));
-		Account account1=
+		Account account1 =
 				new Account(accountDis.readInt(),
 						    accountDis.readUTF(),
 						    accountDis.readInt(), 
 						    accountDis.readDouble());
 		
-		Account account2=
+		Account account2 =
 				new Account(accountDis.readInt(),
 						accountDis.readUTF(),
 						accountDis.readInt(), 

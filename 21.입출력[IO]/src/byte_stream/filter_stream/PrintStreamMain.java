@@ -24,7 +24,7 @@ public class PrintStreamMain {
 		ps.write(54);
 		ps.write(53);
 		ps.print("\n");
-		
+		//System.out.println(Integer.toString('t'));
 		ps.print(true);
 		ps.print("\n");
 		//프린트 메소드의 내부 진행과정

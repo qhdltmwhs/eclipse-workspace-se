@@ -32,6 +32,9 @@ public class ObjectOutputStreamMain {
 		System.out.println("----------Account Object write2 ---> objects.ser----------");
 		Account account2 = new Account(6776, "김성호", 99000, 0.3);
 		oos.writeObject(account2);
+		
+		oos.flush();
+		oos.close();
 	}
 
 }

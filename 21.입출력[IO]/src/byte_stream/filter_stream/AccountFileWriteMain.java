@@ -26,6 +26,7 @@ public class AccountFileWriteMain {
 		accountDos.writeInt(account2.getBalance());
 		accountDos.writeDouble(account2.getIyul());
 		
+		accountDos.flush();
 		accountDos.close();
 		System.out.println(">>>>Account객체data --> accounts.dat파일에저장");
 		

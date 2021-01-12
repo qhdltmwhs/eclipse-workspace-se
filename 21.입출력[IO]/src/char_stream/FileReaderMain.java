@@ -31,19 +31,7 @@ public class FileReaderMain {
 		fr.close();
 		System.out.println();
 		System.out.println("------FileReader.read() " + lineCount+" 라인읽음-----------");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 	}
 
 }

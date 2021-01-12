@@ -25,13 +25,16 @@ public class AccountArrayListFileWriteMain  {
 		DataOutputStream accountListDos =
 				new DataOutputStream(
 						new FileOutputStream("accountList.dat"));
+		
 		accountListDos.writeInt(accountList.size());
+		
 		for (int i = 0; i < accountList.size(); i++) {
 			accountListDos.writeInt(accountList.get(i).getNo());
 			accountListDos.writeUTF(accountList.get(i).getOwner());
 			accountListDos.writeInt(accountList.get(i).getBalance());
 			accountListDos.writeDouble(accountList.get(i).getIyul());
 		}
+		accountListDos.flush();
 		accountListDos.close();
 		System.out.println(">>>>Account객체data --> accounts.dat파일에저장");
 	}

@@ -36,7 +36,6 @@ public class FileOutputStreamMain {
 		 */
 		//fos.write(0b01111111111111111111111111111111);
 		fos.write(2147483647);
-		
 		/*
 		 * 00000000|00000000|00000000|00000000 ---> 십진수 0
 		 * 00000000|00000000|00000000|11111111 ---> 십진수 255
@@ -47,6 +46,7 @@ public class FileOutputStreamMain {
 		
 		fos.close();
 		System.out.println("FileOutputStream.write ---> fileOut.dat");
+		
 	}
 
 }

@@ -25,7 +25,7 @@ public class FileInputStreamMain {
 		 */
 		
 		int readByte = fis.read();
-		System.out.println("1.byte: " + Integer.toBinaryString(readByte));
+		System.out.println("1.byte: " + Integer.toBinaryString(readByte)); 
 		readByte = fis.read();
 		System.out.println("2.byte: " + Integer.toBinaryString(readByte));
 		readByte = fis.read();
@@ -36,9 +36,10 @@ public class FileInputStreamMain {
 			if(readByte == -1)break;
 			System.out.println(Integer.toBinaryString(readByte));
 		}
-		
+	
 		fis.close();
 		System.out.println("FileInputStream.read() ---> fileOut.dat");
+		
 	}
 
 }
