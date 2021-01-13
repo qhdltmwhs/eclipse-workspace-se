@@ -10,8 +10,9 @@ public class ButtonHandler implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton sourceBtn = (JButton) e.getSource();
+		System.out.println(sourceBtn);
 		String command = sourceBtn.getActionCommand();	
-		
+		System.out.println(command);
 		
 		
 		if(command.equals("NB")) {

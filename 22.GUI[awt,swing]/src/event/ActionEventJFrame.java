@@ -27,9 +27,11 @@ import javax.swing.JPanel;
 		  ex> 버튼객체.addActionListener(핸들러객체);
  */
 public class ActionEventJFrame extends JFrame{
+	
 	private JPanel contentPane;
 	private JButton northBtn;
 	private JButton southBtn;
+	
 	public ActionEventJFrame() {
 	    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("ActionEvent처리");
