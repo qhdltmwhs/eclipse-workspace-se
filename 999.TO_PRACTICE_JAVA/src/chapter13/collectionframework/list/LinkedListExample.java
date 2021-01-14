@@ -24,19 +24,22 @@ public class LinkedListExample {
 		}
 		endTime = System.nanoTime();
 		System.out.println("ArrayList 걸린시간: " + (endTime - startTime) + " ns");
+		/*
 		for (String string : list1) {
 			System.out.println(string);
 		}
-		
+		*/
 		startTime = System.nanoTime();
 		for(int i=0; i<20; i++) {
 			list2.add(0, String.valueOf(i));
 		}
 		endTime = System.nanoTime();
 		System.out.println("LinkedList 걸린시간: " + (endTime - startTime) + " ns");
+		/*
 		for (String string : list2) {
 			System.out.println(string);
 		}
+		*/
 	}
 
 }
