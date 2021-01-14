@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import sun.security.x509.EDIPartyName;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
@@ -208,6 +211,7 @@ public class CalculatorFrame extends JFrame {
 			}else if (cmd.equals("+")) {
 				firstOpStr = displayStr;
 				operatorStr = "+";
+				
 				System.out.println(firstOpStr + operatorStr);
 			}else if (cmd.equals("-")) {
 				
@@ -227,9 +231,15 @@ public class CalculatorFrame extends JFrame {
 				displayLabel.setText("0");
 			}
 			displayLabel.setText(displayStr);
+		}//actionPerformed 메소드의 끝
+		
+		public void opFlag( ) {
+			 firstOp = 0;
+			 secondOp = 1;
 		}
 		
-	}
+		
+	}//inner class의 끝
 	
 
 }//클래스의 끝
