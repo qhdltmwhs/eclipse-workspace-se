@@ -15,6 +15,12 @@ public class InetAddressMain {
 		InetAddress remoteAddress = InetAddress.getByName("www.naver.com");
 		System.out.println("remote host name: " + remoteAddress.getHostName());
 		System.out.println("remote host name: " + remoteAddress.getHostAddress());
+		
+		System.out.println("-----remote addresses-----");
+		InetAddress[] remoAddresses = InetAddress.getAllByName("www.naver.com");
+		for (InetAddress inetAddress : remoAddresses) {
+			System.out.println(inetAddress);
+		}
 	}
 
 }
