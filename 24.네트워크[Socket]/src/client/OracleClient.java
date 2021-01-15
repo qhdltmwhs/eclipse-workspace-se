@@ -5,6 +5,12 @@ import java.net.Socket;
 public class OracleClient {
 
 	public static void main(String[] args) throws Exception {
+		/*
+		 *  << 강사님 >> 
+		 *		- oracle db 서버 ip: 182.237.126.19 
+		 * 		- oracle db	서버 default port number: 1521
+		 */
+		
 		Socket socket = new Socket("182.237.126.19", 1521);
 		System.out.println("oracle db server socket: " + socket);
 		
