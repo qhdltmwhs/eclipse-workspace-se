@@ -7,7 +7,11 @@ public class ClientSocketMain {
 
 	public static void main(String[] args) throws Exception {
 		
-		Socket socket = new Socket("www.naver.com", 80);
+		/*
+		 *  본인서버 IP ---> 192.168.15.24
+		 */
+		// Socket socket = new Socket("www.naver.com", 80);
+		Socket socket = new Socket("192.168.15.24", 3333);
 		System.out.println(socket);
 		
 		InetAddress remoteAddress = socket.getInetAddress();
