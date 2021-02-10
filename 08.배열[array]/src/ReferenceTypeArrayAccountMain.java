@@ -89,8 +89,7 @@ public class ReferenceTypeArrayAccountMain {
 				}
 			}
 		}
-<<<<<<< HEAD
-=======
+
 		System.out.println("----------이름(String)순으로 오름차순정렬후----------");
 		Account.headerPrint();
 		/*
@@ -115,7 +114,6 @@ public class ReferenceTypeArrayAccountMain {
 			}
 		}
 		
->>>>>>> branch 'master' of https://github.com/qhdltmwhs/eclipse-workspace-se.git
 		/*
 		 *  UPDATE 
 		 */

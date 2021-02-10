@@ -41,22 +41,7 @@ public class StringMain {
 		}
 		if(name1.equals(name3)) {
 			System.out.println("name1과 name3의 문자열이동일하다");
-<<<<<<< HEAD
-			
-		}
-		if(name1.equals(name4)) {
-			System.out.println("name1과 name4의 문자열이동일하다");
-			
-		}
-		if(name1.equals("KIM")) {
-			System.out.println("name1과 KIM 의 문자열이동일하다");
-			
-		}
-		if("KIM".equals("KIM")) {
-			System.out.println("KIM 과 KIM 의 문자열이동일하다");
-			
-		}
-=======
+
 		}
 		if(name1.equals(name4)) {
 			System.out.println("name1과 name4의 문자열이동일하다");
@@ -127,13 +112,5 @@ public class StringMain {
 		if("김경호".compareTo("김경호")== 0) {
 			System.out.println("uncodegap:"+"김경호".compareTo("김경호"));
 		}
-		
-		
-		
-		
-		
-		
-		
->>>>>>> branch 'master' of https://github.com/qhdltmwhs/eclipse-workspace-se.git
 	}
 }

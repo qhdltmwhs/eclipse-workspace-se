@@ -46,43 +46,9 @@ public class Account {
 		System.out.println("번호  이름  잔고  이율");
 		System.out.println("----------------------");
 	}
-	
 	//계좌정보출력메쏘드
 	public void print() {
-<<<<<<< HEAD
-		System.out.printf("%d  %s  %d  %4.1f %n",this.no,this.owner,this.balance,this.iyul);
-	}
-	
-	//getter 메쏘드
-	public int getNo() {
-		return this.no;
-	}
-	public String getOwner() {
-		return this.owner;
-	}
-	public int getBalance() {
-		return this.balance;
-	}
-	public double getIyul() {
-		return this.iyul;
-	}
-	//setter 메쏘드
-	public void setNo(int no) {
-		this.no = no;
-	}
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
-	public void setIyul(double iyul) {
-		this.iyul = iyul;
-	}
-	
-	
-}
-=======
+
 		/*
 		 1.첫글자 대문자
 		 2.5자리로출력
@@ -94,7 +60,6 @@ public class Account {
 		System.out.printf("%d  %s  %d  %4.1f %n",this.no,tempOwner,this.balance,this.iyul);
 		
 	}
-	
 	//getter 메쏘드
 	public int getNo() {
 		return this.no;
@@ -121,7 +86,5 @@ public class Account {
 	public void setIyul(double iyul) {
 		this.iyul = iyul;
 	}
-	
-	
 }
->>>>>>> branch 'master' of https://github.com/qhdltmwhs/eclipse-workspace-se.git
+
