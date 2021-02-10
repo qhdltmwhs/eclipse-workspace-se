@@ -3,6 +3,10 @@ class Member{
 	private String name;
 	public Member() {
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://github.com/qhdltmwhs/eclipse-workspace-se.git
 	/*
 	 * alt + shift + s(source)
 	 *   생성자				: o

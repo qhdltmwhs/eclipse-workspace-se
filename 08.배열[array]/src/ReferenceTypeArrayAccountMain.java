@@ -89,6 +89,33 @@ public class ReferenceTypeArrayAccountMain {
 				}
 			}
 		}
+<<<<<<< HEAD
+=======
+		System.out.println("----------이름(String)순으로 오름차순정렬후----------");
+		Account.headerPrint();
+		/*
+		 * Quiz : 이름이 같을경우 잔고순 오름차순정렬(2차정렬)
+		 */
+		for (int i = 0; i < accounts.length - 1; i++) {
+			for (int j = 0; j < accounts.length - 1; j++) {
+				String firstName = accounts[j].getOwner();
+				String secondName = accounts[j + 1].getOwner();
+				if(firstName.compareTo(secondName) > 0) {
+					Account tempAccount = accounts[j];
+					accounts[j] = accounts[j + 1];
+					accounts[j +1] = tempAccount;
+				}else if(firstName.compareTo(secondName) == 0) {
+					
+					if(accounts[j].getBalance() > accounts[j + 1].getBalance()) {
+						 Account tempAccount =  accounts[j];
+						 accounts[j] = accounts[j + 1];
+						 accounts[j + 1] = tempAccount;
+					} 
+				}
+			}
+		}
+		
+>>>>>>> branch 'master' of https://github.com/qhdltmwhs/eclipse-workspace-se.git
 		/*
 		 *  UPDATE 
 		 */

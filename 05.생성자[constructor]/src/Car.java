@@ -1,6 +1,7 @@
 
 public class Car {
 	
+<<<<<<< HEAD
 	private String no;//번호
 	private int inTime;//입차시간
 	private int outTime;//출차시간
@@ -31,6 +32,39 @@ public class Car {
 	public void calculateFee() {
 	
 		this.fee =(this.outTime-this.inTime)*1000; 
+=======
+	public static final int FEE_PER_HOUR = 1000;
+	private String no;//번호
+	private int inTime;//입차시간
+	private int outTime;//출차시간
+	private int fee;//주차요금
+	/*
+	 * 생성자 오버로딩
+	 */
+	public Car() {
+	
+	}
+	public Car(String no,int inTime) {
+		this.no=no;
+		this.inTime=inTime;
+	}
+	
+	public Car(String no, int inTime, int outTime, int fee) {
+		this.no = no;
+		this.inTime = inTime;
+		this.outTime = outTime;
+		this.fee = fee;
+	}
+	public void setIpChaData(String no,int inTime) {
+		this.no=no;
+		this.inTime=inTime;
+	}
+	
+	
+	public void calculateFee() {
+		
+		this.fee =(this.outTime-this.inTime) * Car.FEE_PER_HOUR; 
+>>>>>>> branch 'master' of https://github.com/qhdltmwhs/eclipse-workspace-se.git
 	}
 	// - 타이틀출력
 	public void headerPrint() {
